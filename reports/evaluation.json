@@ -1,0 +1,102 @@
+{
+  "clean_pdfs": {
+    "documents": 250,
+    "field_accuracy": 1.0,
+    "per_field_accuracy": {
+      "vendor": 1.0,
+      "invoice_number": 1.0,
+      "invoice_date": 1.0,
+      "due_date": 1.0,
+      "po_number": 1.0,
+      "subtotal": 1.0,
+      "tax": 1.0,
+      "total": 1.0
+    },
+    "line_items_exact_match": 1.0,
+    "docs_with_any_extraction_error": 0,
+    "silent_errors": 0,
+    "injected_problems": {
+      "bad_total": {
+        "sent_to_review": 9,
+        "exact_reason": 9,
+        "total": 9
+      },
+      "missing_po": {
+        "sent_to_review": 10,
+        "exact_reason": 10,
+        "total": 10
+      },
+      "due_before_invoice": {
+        "sent_to_review": 6,
+        "exact_reason": 6,
+        "total": 6
+      },
+      "duplicate": {
+        "sent_to_review": 12,
+        "exact_reason": 12,
+        "total": 12
+      },
+      "line_sum_mismatch": {
+        "sent_to_review": 11,
+        "exact_reason": 11,
+        "total": 11
+      }
+    },
+    "clean_docs": 202,
+    "clean_docs_sent_to_review": 0,
+    "review_reasons_on_misread_docs": {}
+  },
+  "scanned_pdfs_ocr": {
+    "documents": 85,
+    "field_accuracy": 0.9970588235294118,
+    "per_field_accuracy": {
+      "vendor": 1.0,
+      "invoice_number": 1.0,
+      "invoice_date": 1.0,
+      "due_date": 1.0,
+      "po_number": 0.9882352941176471,
+      "subtotal": 0.9882352941176471,
+      "tax": 1.0,
+      "total": 1.0
+    },
+    "line_items_exact_match": 0.9529411764705882,
+    "docs_with_any_extraction_error": 5,
+    "silent_errors": 0,
+    "injected_problems": {
+      "bad_total": {
+        "sent_to_review": 3,
+        "exact_reason": 3,
+        "total": 3
+      },
+      "missing_po": {
+        "sent_to_review": 2,
+        "exact_reason": 2,
+        "total": 2
+      },
+      "due_before_invoice": {
+        "sent_to_review": 4,
+        "exact_reason": 4,
+        "total": 4
+      },
+      "duplicate": {
+        "sent_to_review": 2,
+        "exact_reason": 2,
+        "total": 2
+      },
+      "line_sum_mismatch": {
+        "sent_to_review": 7,
+        "exact_reason": 6,
+        "total": 7
+      }
+    },
+    "clean_docs": 63,
+    "clean_docs_sent_to_review": 4,
+    "review_reasons_on_misread_docs": {
+      "line_sum_mismatch": 1,
+      "no_line_items": 2,
+      "line_math": 1,
+      "bad_total": 1,
+      "po_format": 1
+    }
+  }
+}

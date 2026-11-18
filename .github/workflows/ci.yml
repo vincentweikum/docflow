@@ -1,0 +1,25 @@
+name: ci
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr
+      - run: pip install -r requirements.txt
+      - run: make lint
+      - run: make test
+      - name: Full evaluation (clean + scanned)
+        run: make evaluate
+      - name: Fail if anything wrong was auto-approved
+        run: |
+          python -c "import json,sys; r=json.load(open('reports/evaluation.json')); s=sum(v['silent_errors'] for v in r.values()); print('silent errors:', s); sys.exit(1 if s else 0)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evaluation
+          path: reports/
